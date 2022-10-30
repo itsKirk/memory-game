@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./components/Card";
+import Footer from "./components/Footer";
 import "./index.css";
 const faces = [
   { src: "/imgs/choco-1.jpg", matched: false },
@@ -64,26 +65,30 @@ function App() {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
   return (
-    <div className="app">
-      <h3 className="title">Memory Game</h3>
-      <button onClick={shuffle}>New Game</button>
-      <div className="card-grid">
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            card={card}
-            handleChoice={handleChoice}
-            flipped={card === choiceOne || card === choiceTwo || card.matched}
-            disabled={disabled}
-          />
-        ))}
+    <>
+      {" "}
+      <div className="app">
+        <h3 className="title">Memory Game</h3>
+        <button onClick={shuffle}>New Game</button>
+        <div className="card-grid">
+          {cards.map((card) => (
+            <Card
+              key={card.id}
+              card={card}
+              handleChoice={handleChoice}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
+              disabled={disabled}
+            />
+          ))}
+        </div>
+        <p>
+          {gameOver && turns > 0
+            ? `Game Over! You made ${turns} moves.`
+            : `Turns Played: ${turns}`}
+        </p>
       </div>
-      <p>
-        {gameOver && turns > 0
-          ? `Game Over! You made ${turns} moves.`
-          : `Turns Played: ${turns}`}
-      </p>
-    </div>
+      <Footer />
+    </>
   );
 }
 

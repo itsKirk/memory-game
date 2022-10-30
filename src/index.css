@@ -84,3 +84,9 @@ button:hover {
   transition: all ease-in 0.2s;
   transition-delay: 0.2s;
 }
+
+footer{
+text-align: center;
+bottom: 0;
+font-size: 0.8rem;
+}
