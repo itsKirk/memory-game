@@ -1,13 +1,86 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Philosopher', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: medium;
+  font-weight: 700;
+  background-color: darkgray;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  width: 100vw;
+  text-align: center;
+  font-size: 2rem;
+}
+
+button {
+  min-width: 100px;
+  color: brown;
+  padding: 5px;
+  background-color: aqua;
+  font-size: .8rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: brown;
+  color: chartreuse;
+}
+
+.title {
+  color: brown;
+
+}
+
+.card-grid {
+  margin: 20px auto;
+  width: 410px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: auto;
+  border: 2px solid brown;
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  display: block;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card .front {
+  transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
+  position: absolute;
+}
+
+.flipped .front {
+  transform: rotateY(0deg);
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
+
+.card .back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
 }
