@@ -35,8 +35,7 @@ function App() {
     shuffle();
   }, []);
   useEffect(() => {
-    if (gameOver) {
-    }
+
     if (choiceOne && choiceTwo) {
       setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
